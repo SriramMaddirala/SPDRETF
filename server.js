@@ -8,7 +8,11 @@ const port = 8000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-MongoClient.connect(db.url, (err, database) => { if (err) return console.log(err) })
+MongoClient.connect(db.url, (err, database) => {
+  if (err) {
+    return console.log(err)
+  }
+})
 
 const database = database.db("note-api")
 
