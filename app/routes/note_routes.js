@@ -1,6 +1,7 @@
 var ObjectID = require('mongodb').ObjectID;
 
 module.exports = function (app, db) {
+
   app.get('/notes/:id', (req, res) => {
     const id = req.params.id;
     const details = { '_id': new ObjectID(id) };
@@ -14,6 +15,7 @@ module.exports = function (app, db) {
         }
       });
   });
+  
   app.post('/notes', (req, res) => {
     const note = { text: req.body.body, title: req.body.title };
     db.collection('notes')
@@ -26,6 +28,7 @@ module.exports = function (app, db) {
         }
       });
   });
+
   app.delete('/notes/:id', (req, res) => {
     const id = req.params.id;
     const details = {
@@ -39,6 +42,7 @@ module.exports = function (app, db) {
       }
     });
   });
+
   app.put('/notes/:id', (req, res) => {
     const id = req.params.id;
     const details = {
