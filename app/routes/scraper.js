@@ -1,5 +1,4 @@
-const noteRoutes = require("./note_routes");
+const rp = require('request-promise');
+const cheerio = require('cheerio');
+const baseURL = 'https://www.ssga.com/us/en/intermediary/etfs/fund-finder';
 
-module.exports = function(app, db) {
-  noteRoutes(app, db);
-};
