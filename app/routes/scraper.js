@@ -1,4 +1,3 @@
-const rp = require('request-promise');
-const cheerio = require('cheerio');
-const baseURL = 'https://www.ssga.com/us/en/intermediary/etfs/fund-finder';
+const axios = require('axios');
 
+const baseURL = 'https://www.ssga.com/us/en/intermediary/etfs/fund-finder';
